@@ -1,0 +1,38 @@
+用户权限匹配
+
+//第一种实现：不区分两个集合的大小，一律遍历新的集合（优点：思路清晰，代码少，易维护；缺点：会多循环几次）
+            IList<string> listWait2Add = new List<string>();
+            IList<string> listWait2Delete = new List<string>(listOld);
+            foreach (string item in listNew)
+            {
+                if (listOld.Contains(item))
+                    listWait2Delete.Remove(item);
+                else
+                    listWait2Add.Add(item);
+            }
+
+            第二种实现：区分两个集合的大小，遍历最小的集合（优点：当数据量特别大时，效率较高；缺点：与一相比较代码较多，不太易维护）
+            IList<string> listWait2Add = new List<string>();
+            IList<string> listWait2Delete = new List<string>();
+            if (listNew.Count < listOld.Count)
+            {
+               listWait2Delete = new List<string>(listOld);
+               foreach (string item in listNew)
+                {
+                    if (listOld.Contains(item))
+                        listWait2Delete.Remove(item);
+                    else
+                        listWait2Add.Add(item);
+                }
+            }
+            else
+            {
+               listWait2Add = new List<string>(listNew);
+                foreach (string item in listOld)
+                {
+                    if (listNew.Contains(item))
+                        listWait2Add.Remove(item);
+                   else
+                        listWait2Delete.Add(item);
+                }
+            }
