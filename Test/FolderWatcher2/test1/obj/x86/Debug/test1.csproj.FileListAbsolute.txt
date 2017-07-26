@@ -1,0 +1,11 @@
+E:\席自杭\workspace\test1\test1\bin\Debug\test1.exe
+E:\席自杭\workspace\test1\test1\bin\Debug\test1.pdb
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\test1.Form1.resources
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\test1.Properties.Resources.resources
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\test1.exe
+E:\席自杭\workspace\test1\test1\obj\x86\Debug\test1.pdb
+C:\Users\Administrator\Desktop\test\test1\test1\obj\x86\Debug\test1.exe
+C:\Users\Administrator\Desktop\test\test1\test1\obj\x86\Debug\test1.pdb

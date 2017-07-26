@@ -1,0 +1,16 @@
+E:\code\c#\winform\test\test\bin\Debug\test.exe
+E:\code\c#\winform\test\test\bin\Debug\test.pdb
+E:\code\c#\winform\test\test\obj\x86\Debug\test.Form1.resources
+E:\code\c#\winform\test\test\obj\x86\Debug\test.Properties.Resources.resources
+E:\code\c#\winform\test\test\obj\x86\Debug\test.csproj.GenerateResource.Cache
+E:\code\c#\winform\test\test\obj\x86\Debug\test.exe
+E:\code\c#\winform\test\test\obj\x86\Debug\test.pdb
+E:\code\c#\winform\test\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.exe
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.pdb
+C:\Users\Administrator\Desktop\test\test\bin\Debug\test.exe
+C:\Users\Administrator\Desktop\test\test\bin\Debug\test.pdb
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.Form1.resources
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.Properties.Resources.resources
+C:\Users\Administrator\Desktop\test\test\obj\x86\Debug\test.csproj.GenerateResource.Cache
