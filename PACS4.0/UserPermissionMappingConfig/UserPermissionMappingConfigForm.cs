@@ -80,102 +80,7 @@ namespace Restore.FIIS.BC.Configs
             //    }
             //}
 
-            UserPermissionMappingService.SaveUserPermissionMapping(this.OperateUserCode, this.SelectedUserCode, listWait2Add.ToArray());
-            UserPermissionMappingService.DeleteUserPermissionMapping(this.OperateUserCode, this.SelectedUserCode, listWait2Delete.ToArray());
-            this.UserPermissionMappingRecords = PermissionService.GetPermissionListByUserCode(this.SelectedUserCode);
-        }
-        private void NotifyUserPermissionMappingConfigChanged()
-        {
-            if (OnRefreshControlData != null)
-                OnRefreshControlData(this, new RefreshControlDataArgs(MessageLabels.UserPermissionMappingConfigChanged));
-        }
-        public void RefreshControlData(IMessage msg)
-        {
-            switch (msg.Subject)
-            {
-                case MessageLabels.UserConfigChanged:
-                    {
-                        this.Response(UserPermissionMappingConfigItemNames.UserRecords, UserService.GetUserList());
-                        if (string.IsNullOrEmpty(this.SelectedUserCode)) break;
-                        IUser_User_LXUE user = UserService.GetActiveUser(this.SelectedUserCode);
-                        if (user == null)
-                        {
-                            this.SelectedUserCode = null;
-                            this.UserPermissionMappingRecords = null;
-                        }
-                        else
-                        {
-                            this.Response(UserPermissionMappingConfigItemNames.SelectedUserCode, this.SelectedUserCode);
-                        }
-                        break;
-                    }
-                case MessageLabels.LoginApplication:
-                    this.OperateUserCode = ((string[])msg.Data)[0];
-                    break;
-            }
-        }
-        #region 定义属性
-        internal string SelectedUserCode
-        {
-            get
-            {
-                return (string)this.GetFieldValue(UserPermissionMappingConfigItemNames.SelectedUserCode);
-            }
-            set
-            {
-                this.SetFieldValue(UserPermissionMappingConfigItemNames.SelectedUserCode, value);
-            }
-        }
-        internal IList<IUser_Permission_LXUE> UserPermissionMappingRecords
-        {
-            get
-            {
-                return this.GetFieldValue(UserPermissionMappingConfigItemNames.UserPermissionMappingRecords) as IList<IUser_Permission_LXUE>;
-            }
-            set
-            {
-                this.SetFieldValue(UserPermissionMappingConfigItemNames.UserPermissionMappingRecords, value);
-            }
-        }
-        public string OperateUserCode
-        {
-            get
-            {
-                return (string)this.GetFieldValue(UserPermissionMappingConfigItemNames.OperateUserCode);
-            }
-            set
-            {
-                this.SetFieldValue(UserPermissionMappingConfigItemNames.OperateUserCode, value);
-            }
-        }
-        #endregion
-
-        protected override void OnFieldValueChanged(DataDepositoryEventArgs e)
-        {
-            base.OnFieldValueChanged(e);
-            switch (e.FieldName)
-            {
-                case UserPermissionMappingConfigItemNames.SelectedUserCode:
-                    {
-                        if (e.FieldValue != null)
-                            this.UserPermissionMappingRecords = PermissionService.GetPermissionListByUserCode((string)e.FieldValue);
-                        else
-                            this.UserPermissionMappingRecords = null;
-                        break;
-                    }
-            }
-        }
-
-        protected override object DecodeRequestArgs(FERequest e)
-        {
-            switch (e.Title)
-            {
-                case UserPermissionMappingConfigItemNames.Save:
-                    return this.Json2Object(e.Arguments[0] as string, typeof(string[]));
-                default:
-                    return null;
-            }
-        }
+           
         protected override void Request(FormRequest e)
         {
             switch (e.Title)
@@ -242,7 +147,3 @@ namespace Restore.FIIS.BC.Configs
             }
         }
 
-        protected override void CheckFieldValue(string fieldName, object fieldValue)
-        { }
-    }
-}
